@@ -32,5 +32,8 @@
     <Setting Name="Whitelist" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SaveMap" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/c game.server_save()</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -127,5 +127,14 @@ namespace FactorioRcon.Properties {
                 this["Whitelist"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/c game.server_save()")]
+        public string SaveMap {
+            get {
+                return ((string)(this["SaveMap"]));
+            }
+        }
     }
 }

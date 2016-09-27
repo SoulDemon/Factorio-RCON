@@ -69,6 +69,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playerBackGround = new System.ComponentModel.BackgroundWorker();
+            this.SaveMapButton = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.SaveMapButton);
             this.tabPage2.Controls.Add(this.SetDayButton);
             this.tabPage2.Controls.Add(this.AdminCheck);
             this.tabPage2.Controls.Add(this.CheckBans);
@@ -91,9 +93,9 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.SendInputButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(922, 438);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Console";
@@ -102,7 +104,7 @@
             // SetDayButton
             // 
             this.SetDayButton.Location = new System.Drawing.Point(838, 179);
-            this.SetDayButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SetDayButton.Margin = new System.Windows.Forms.Padding(2);
             this.SetDayButton.Name = "SetDayButton";
             this.SetDayButton.Size = new System.Drawing.Size(74, 24);
             this.SetDayButton.TabIndex = 12;
@@ -112,7 +114,7 @@
             // AdminCheck
             // 
             this.AdminCheck.Location = new System.Drawing.Point(838, 91);
-            this.AdminCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdminCheck.Margin = new System.Windows.Forms.Padding(2);
             this.AdminCheck.Name = "AdminCheck";
             this.AdminCheck.Size = new System.Drawing.Size(74, 24);
             this.AdminCheck.TabIndex = 11;
@@ -123,7 +125,7 @@
             // CheckBans
             // 
             this.CheckBans.Location = new System.Drawing.Point(838, 120);
-            this.CheckBans.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckBans.Margin = new System.Windows.Forms.Padding(2);
             this.CheckBans.Name = "CheckBans";
             this.CheckBans.Size = new System.Drawing.Size(74, 24);
             this.CheckBans.TabIndex = 10;
@@ -159,7 +161,7 @@
             // PlayersButton
             // 
             this.PlayersButton.Location = new System.Drawing.Point(838, 62);
-            this.PlayersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PlayersButton.Margin = new System.Windows.Forms.Padding(2);
             this.PlayersButton.Name = "PlayersButton";
             this.PlayersButton.Size = new System.Drawing.Size(74, 24);
             this.PlayersButton.TabIndex = 4;
@@ -170,7 +172,7 @@
             // EvolutionButton
             // 
             this.EvolutionButton.Location = new System.Drawing.Point(838, 150);
-            this.EvolutionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EvolutionButton.Margin = new System.Windows.Forms.Padding(2);
             this.EvolutionButton.Name = "EvolutionButton";
             this.EvolutionButton.Size = new System.Drawing.Size(74, 24);
             this.EvolutionButton.TabIndex = 8;
@@ -181,7 +183,7 @@
             // HelpButton
             // 
             this.HelpButton.Location = new System.Drawing.Point(838, 32);
-            this.HelpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HelpButton.Margin = new System.Windows.Forms.Padding(2);
             this.HelpButton.Name = "HelpButton";
             this.HelpButton.Size = new System.Drawing.Size(74, 24);
             this.HelpButton.TabIndex = 7;
@@ -245,9 +247,9 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.ConnectButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(922, 438);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Settings";
@@ -291,7 +293,7 @@
             // WhitelistText
             // 
             this.WhitelistText.Location = new System.Drawing.Point(248, 48);
-            this.WhitelistText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WhitelistText.Margin = new System.Windows.Forms.Padding(2);
             this.WhitelistText.Name = "WhitelistText";
             this.WhitelistText.Size = new System.Drawing.Size(227, 345);
             this.WhitelistText.TabIndex = 16;
@@ -311,7 +313,7 @@
             // 
             this.WhitelistBox.AutoSize = true;
             this.WhitelistBox.Location = new System.Drawing.Point(248, 24);
-            this.WhitelistBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WhitelistBox.Margin = new System.Windows.Forms.Padding(2);
             this.WhitelistBox.Name = "WhitelistBox";
             this.WhitelistBox.Size = new System.Drawing.Size(66, 17);
             this.WhitelistBox.TabIndex = 14;
@@ -327,7 +329,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "V1.0.1";
+            this.label7.Text = "V1.0.2";
             // 
             // label6
             // 
@@ -374,7 +376,7 @@
             // 
             this.webBrowser1.AllowNavigation = false;
             this.webBrowser1.Location = new System.Drawing.Point(687, 38);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(15, 16);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScrollBarsEnabled = false;
@@ -396,7 +398,7 @@
             // SaveSettings
             // 
             this.SaveSettings.Location = new System.Drawing.Point(8, 153);
-            this.SaveSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SaveSettings.Margin = new System.Windows.Forms.Padding(2);
             this.SaveSettings.Name = "SaveSettings";
             this.SaveSettings.Size = new System.Drawing.Size(116, 54);
             this.SaveSettings.TabIndex = 9;
@@ -455,7 +457,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(9, 10);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(930, 464);
@@ -465,9 +467,9 @@
             // 
             this.tabPage3.Controls.Add(this.PlayersTextBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(922, 438);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Players (0)";
@@ -476,7 +478,7 @@
             // PlayersTextBox
             // 
             this.PlayersTextBox.Location = new System.Drawing.Point(4, 18);
-            this.PlayersTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PlayersTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PlayersTextBox.Name = "PlayersTextBox";
             this.PlayersTextBox.ReadOnly = true;
             this.PlayersTextBox.Size = new System.Drawing.Size(809, 418);
@@ -490,9 +492,9 @@
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(922, 438);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "About";
@@ -534,7 +536,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(787, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(126, 144);
             this.pictureBox1.TabIndex = 0;
@@ -546,6 +548,17 @@
             this.playerBackGround.WorkerSupportsCancellation = true;
             this.playerBackGround.DoWork += new System.ComponentModel.DoWorkEventHandler(this.playerBackGround_DoWork);
             // 
+            // SaveMapButton
+            // 
+            this.SaveMapButton.Location = new System.Drawing.Point(838, 207);
+            this.SaveMapButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveMapButton.Name = "SaveMapButton";
+            this.SaveMapButton.Size = new System.Drawing.Size(74, 24);
+            this.SaveMapButton.TabIndex = 13;
+            this.SaveMapButton.Text = "Save-Map";
+            this.SaveMapButton.UseVisualStyleBackColor = true;
+            this.SaveMapButton.Click += new System.EventHandler(this.SaveMapButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,7 +569,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Factorio RCon V1.0.1";
+            this.Text = "Factorio RCon V1.0.2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -612,6 +625,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox whitelistkick;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button SaveMapButton;
     }
 }
 

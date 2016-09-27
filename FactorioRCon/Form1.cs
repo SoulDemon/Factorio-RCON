@@ -241,6 +241,11 @@ namespace FactorioRcon
             
         }
 
+        private void SaveMapButton_Click(object sender, EventArgs e)
+        {
+            sr.ServerCommand(Properties.Settings.Default.SaveMap);
+        }
+
         private void SaveSettings_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.IP = IPBox.Text;
@@ -284,5 +289,7 @@ namespace FactorioRcon
                 MessageBox.Show("Whitelist Disabled");
             }
         }
+
+
     }
 }
