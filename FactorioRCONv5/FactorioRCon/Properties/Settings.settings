@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FactorioRcon.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Evolution" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/evolution</Value>
+    </Setting>
+    <Setting Name="Players" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/p</Value>
+    </Setting>
+    <Setting Name="Help" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/h</Value>
+    </Setting>
+    <Setting Name="IP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12345</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Password</Value>
+    </Setting>
+    <Setting Name="Admins" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/admins</Value>
+    </Setting>
+    <Setting Name="Bans" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/bans</Value>
+    </Setting>
+    <Setting Name="Ping" Type="System.String" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Whitelist" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
