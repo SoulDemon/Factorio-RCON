@@ -1,7 +1,3 @@
-SourceRcon Example in C#
-Copyright Andrew Simpson 2008
-http://aiusepsi.co.uk
-
 This code works, more or less, but the sample program isn't too user-friendly. Not all exceptions are handled, so remember your try/catch blocks!
 
 Version History:
