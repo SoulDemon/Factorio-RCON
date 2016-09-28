@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SaveMapButton = new System.Windows.Forms.Button();
             this.SetDayButton = new System.Windows.Forms.Button();
             this.AdminCheck = new System.Windows.Forms.Button();
             this.CheckBans = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.SendInputButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
-            this.whitelistkick = new System.Windows.Forms.RichTextBox();
+            this.whitelistban = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.WhitelistText = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,7 +70,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playerBackGround = new System.ComponentModel.BackgroundWorker();
-            this.SaveMapButton = new System.Windows.Forms.Button();
+            this.internalLog = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.serverName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -100,6 +106,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Console";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // SaveMapButton
+            // 
+            this.SaveMapButton.Location = new System.Drawing.Point(838, 207);
+            this.SaveMapButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveMapButton.Name = "SaveMapButton";
+            this.SaveMapButton.Size = new System.Drawing.Size(74, 24);
+            this.SaveMapButton.TabIndex = 13;
+            this.SaveMapButton.Text = "Save-Map";
+            this.SaveMapButton.UseVisualStyleBackColor = true;
+            this.SaveMapButton.Click += new System.EventHandler(this.SaveMapButton_Click);
             // 
             // SetDayButton
             // 
@@ -228,8 +245,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.serverName);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.internalLog);
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.whitelistkick);
+            this.tabPage1.Controls.Add(this.whitelistban);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.WhitelistText);
             this.tabPage1.Controls.Add(this.label12);
@@ -258,27 +281,27 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(493, 72);
+            this.label14.Location = new System.Drawing.Point(556, 32);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 13);
             this.label14.TabIndex = 20;
             this.label14.Text = "DISABLED";
             // 
-            // whitelistkick
+            // whitelistban
             // 
-            this.whitelistkick.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.whitelistban.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.whitelistkick.Enabled = false;
-            this.whitelistkick.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.whitelistkick.Location = new System.Drawing.Point(478, 49);
-            this.whitelistkick.Name = "whitelistkick";
-            this.whitelistkick.ReadOnly = true;
-            this.whitelistkick.Size = new System.Drawing.Size(90, 62);
-            this.whitelistkick.TabIndex = 19;
-            this.whitelistkick.TabStop = false;
-            this.whitelistkick.Text = "";
+            this.whitelistban.Enabled = false;
+            this.whitelistban.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.whitelistban.Location = new System.Drawing.Point(478, 49);
+            this.whitelistban.Name = "whitelistban";
+            this.whitelistban.ReadOnly = true;
+            this.whitelistban.Size = new System.Drawing.Size(204, 344);
+            this.whitelistban.TabIndex = 19;
+            this.whitelistban.TabStop = false;
+            this.whitelistban.Text = "";
             // 
             // label13
             // 
@@ -286,9 +309,9 @@
             this.label13.Location = new System.Drawing.Point(476, 32);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.Size = new System.Drawing.Size(74, 13);
             this.label13.TabIndex = 18;
-            this.label13.Text = "Whitelist Kicks";
+            this.label13.Text = "Whitelist Bans";
             // 
             // WhitelistText
             // 
@@ -329,7 +352,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "V1.0.2";
+            this.label7.Text = "V1.0.3";
             // 
             // label6
             // 
@@ -345,7 +368,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 95);
+            this.label3.Location = new System.Drawing.Point(7, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 6;
@@ -366,7 +389,7 @@
             this.IPBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.IPBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IPBox.Location = new System.Drawing.Point(8, 24);
+            this.IPBox.Location = new System.Drawing.Point(10, 68);
             this.IPBox.Name = "IPBox";
             this.IPBox.Size = new System.Drawing.Size(201, 22);
             this.IPBox.TabIndex = 0;
@@ -389,7 +412,7 @@
             this.PortBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PortBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PortBox.Location = new System.Drawing.Point(8, 67);
+            this.PortBox.Location = new System.Drawing.Point(10, 111);
             this.PortBox.Name = "PortBox";
             this.PortBox.Size = new System.Drawing.Size(201, 22);
             this.PortBox.TabIndex = 1;
@@ -397,12 +420,12 @@
             // 
             // SaveSettings
             // 
-            this.SaveSettings.Location = new System.Drawing.Point(8, 153);
+            this.SaveSettings.Location = new System.Drawing.Point(8, 183);
             this.SaveSettings.Margin = new System.Windows.Forms.Padding(2);
             this.SaveSettings.Name = "SaveSettings";
             this.SaveSettings.Size = new System.Drawing.Size(116, 54);
             this.SaveSettings.TabIndex = 9;
-            this.SaveSettings.Text = "Save Settings";
+            this.SaveSettings.Text = "Append Settings";
             this.SaveSettings.UseVisualStyleBackColor = true;
             this.SaveSettings.Click += new System.EventHandler(this.SaveSettings_Click);
             // 
@@ -411,7 +434,7 @@
             this.PasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(8, 110);
+            this.PasswordBox.Location = new System.Drawing.Point(10, 154);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(202, 22);
             this.PasswordBox.TabIndex = 2;
@@ -421,7 +444,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 6);
+            this.label1.Location = new System.Drawing.Point(7, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 4;
@@ -431,7 +454,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 48);
+            this.label2.Location = new System.Drawing.Point(6, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 5;
@@ -442,7 +465,7 @@
             this.ConnectButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConnectButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConnectButton.Location = new System.Drawing.Point(8, 230);
+            this.ConnectButton.Location = new System.Drawing.Point(10, 347);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(200, 46);
             this.ConnectButton.TabIndex = 3;
@@ -548,16 +571,69 @@
             this.playerBackGround.WorkerSupportsCancellation = true;
             this.playerBackGround.DoWork += new System.ComponentModel.DoWorkEventHandler(this.playerBackGround_DoWork);
             // 
-            // SaveMapButton
+            // internalLog
             // 
-            this.SaveMapButton.Location = new System.Drawing.Point(838, 207);
-            this.SaveMapButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SaveMapButton.Name = "SaveMapButton";
-            this.SaveMapButton.Size = new System.Drawing.Size(74, 24);
-            this.SaveMapButton.TabIndex = 13;
-            this.SaveMapButton.Text = "Save-Map";
-            this.SaveMapButton.UseVisualStyleBackColor = true;
-            this.SaveMapButton.Click += new System.EventHandler(this.SaveMapButton_Click);
+            this.internalLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.internalLog.Enabled = false;
+            this.internalLog.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.internalLog.Location = new System.Drawing.Point(705, 199);
+            this.internalLog.Name = "internalLog";
+            this.internalLog.ReadOnly = true;
+            this.internalLog.Size = new System.Drawing.Size(204, 194);
+            this.internalLog.TabIndex = 21;
+            this.internalLog.TabStop = false;
+            this.internalLog.Text = "";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(702, 183);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Internal Log";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(66, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 13);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Server Select";
+            // 
+            // serverName
+            // 
+            this.serverName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.serverName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverName.Location = new System.Drawing.Point(9, 25);
+            this.serverName.Name = "serverName";
+            this.serverName.Size = new System.Drawing.Size(201, 22);
+            this.serverName.TabIndex = 25;
+            this.serverName.Text = "Factorio";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(5, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(36, 13);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "Name";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 320);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(194, 21);
+            this.comboBox1.TabIndex = 27;
             // 
             // Form1
             // 
@@ -569,7 +645,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Factorio RCon V1.0.2";
+            this.Text = "Factorio RCon V1.0.3";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -623,9 +699,15 @@
         private System.Windows.Forms.CheckBox WhitelistBox;
         private System.ComponentModel.BackgroundWorker playerBackGround;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox whitelistkick;
+        private System.Windows.Forms.RichTextBox whitelistban;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button SaveMapButton;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.RichTextBox internalLog;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox serverName;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 

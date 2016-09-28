@@ -76,7 +76,7 @@ namespace FactorioRcon
                     {
                         foreach (string i in players)
                         {
-                          //  count1 = count1 + 1;
+                         //   count1 = count1 + 1;
                           //  count2 = count2 + 1;
 
                          //   string testing = players[count1] + players[count2];
@@ -85,23 +85,23 @@ namespace FactorioRcon
                               //  MessageBox.Show("Yes");
                             //}
 
-                            if (i.Contains("Players "))
+                            if (i.Contains("Players"))
                             {
                                 //MessageBox.Show(i + " Is Safe ");
                             }
                              else if (i.Contains("(online)"))
                             //else if (WhitelistText.Text.Contains(i + "(online)"))
                             {
-                                //MessageBox.Show(i + " Is Safe ");
+                                //MessageBox.Show(i + " Is Safe from containing online marker ");
                             }
                             else if (WhitelistText.Text.Contains(i))
                              //else if (WhitelistText.Contains(i))
                             {
-                           // MessageBox.Show(i + " Is Safe");
+                            //MessageBox.Show(i + " Is Safe from text box");
                             }
-                            else if (i.Contains("(online)"))
+                            else if (whitelistban.Text.Contains(i))
                             {
-                            //MessageBox.Show(i + " Is Safe");
+
                             }
                             else if (i.Contains(i + "(online)"))
                             {
@@ -110,12 +110,17 @@ namespace FactorioRcon
                             else
                             {
                                 sr.ServerCommand("/kick " + i + " You are not whitelisted on this server!");
+                                string whitespace = (Environment.NewLine);
+                                string whitelist = (i);
+                                MethodInvoker m = () => { if (data != null) whitelistban.AppendText(whitelist); };
+                                MethodInvoker w = () => { if (data != null) whitelistban.AppendText(whitespace); };
+                                this.Invoke(w);
+                                this.Invoke(m);
+
                             }
-
-
                         }
                     }
-                   );
+                  );
 
                     //
 
@@ -180,7 +185,19 @@ namespace FactorioRcon
             sr.Disconnect();
             
             playerBackGround.CancelAsync();
-            
+
+            string whitespace = (Environment.NewLine);
+            string message = ("You are attempting to disconnect.");
+            MethodInvoker m = () => { internalLog.AppendText(message); };
+            MethodInvoker w = () => { internalLog.AppendText(whitespace); };
+            MethodInvoker r = () => { internalLog.AppendText("Disconnect Successfull."); };
+
+                this.Invoke(w);
+                this.Invoke(m);
+            this.Invoke(w);
+            this.Invoke(r);
+            this.Invoke(w);
+
             ConnectButton.Text = "Connect";
             ConnectButton.Click += button2_Click;
             ConnectButton.Click -= Disconnect_Click;
