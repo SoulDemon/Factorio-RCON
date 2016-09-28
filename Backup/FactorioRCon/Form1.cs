@@ -263,11 +263,14 @@ namespace FactorioRcon
         {
             while(!playerBackGround.CancellationPending)
             {
-                for (int i = 1; i <= 100; i++) {
-                	Thread.Sleep(100);
-                	if (playerBackGround.CancellationPending) return;
-                }         	                     
-                sr.ServerCommand(Properties.Settings.Default.Players);
+            	for (int i = 1; i <= 100; i++) {
+            		Thread.Sleep(i*100);
+            		if (playerBackGround.CancellationPending) return;
+            	}         	               
+            	
+                if(sr.Connected)
+                {
+	                sr.ServerCommand(Properties.Settings.Default.Players);
 	                //Reset ChatBox
 	                PlayersTextBox.Invoke(
 	                    (MethodInvoker)
@@ -279,7 +282,7 @@ namespace FactorioRcon
 	                       PlayersTextBox.Text = "";
 	                   }
 	                   );
-                
+                }
                     
             }
             
